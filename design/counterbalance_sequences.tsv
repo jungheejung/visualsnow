@@ -1,6 +1,6 @@
 subject	run-01	run-02	run-03	run-04	run-05	run-06
-sub-01	0	0	1	0	1	1
-sub-02	1	0	0	0	1	1
+sub-01	0	0	1	1	n/a	n/a
+sub-02	1	1	0	0	1	0
 sub-03	1	0	0	1	1	0
 sub-04	0	1	1	0	1	0
 sub-05	0	1	1	0	1	0
