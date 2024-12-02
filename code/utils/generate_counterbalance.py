@@ -10,11 +10,11 @@ main_dir = code_dir.parent.parent
 design_dir = Path(main_dir, "design")
 
 # Generate a 100x4 sequence of 0s and 1s with two 0s and two 1s per row
-rows, cols = 99, 4
+rows, cols = 99, 6
 sequences = []
 
 for _ in range(rows):
-    seq = np.array([0, 0, 1, 1])
+    seq = np.array([0, 0, 0, 1, 1, 1])
     np.random.shuffle(seq)
     sequences.append(seq)
 
