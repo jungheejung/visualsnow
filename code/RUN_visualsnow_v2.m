@@ -143,7 +143,7 @@ waitForKeyPress('5%');
 % Show Fixation Image for 8 minutes
 Screen('DrawTexture', win, fixationTex, [], fixationDstRect);
 Screen('Flip', win);
-WaitSecs(5); % 8 minutes 480s
+WaitSecs(480); % 8 minutes 480s
 
 % Show Wait Image
 Screen('DrawTexture', win, waitTex, [], waitDstRect);
