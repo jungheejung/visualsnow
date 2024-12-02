@@ -5,7 +5,7 @@ main_dir = fileparts(current_dir);
 
 % Prompt for subject number and starting run index
 subjectNum = input('Enter subject number (e.g., 1 for sub-01): ');
-runStart = input('Enter starting run index (1-4): ');
+runStart = input('Enter starting run index (1-8): ');
 subjectBIDS = sprintf('sub-%02d', subjectNum); % Format as sub-01, sub-02, etc.
 
 % Confirmation prompt
@@ -31,7 +31,7 @@ try
     sequence = loadCounterbalance(counterbalanceFile, subjectBIDS);
 
     % Loop through runs starting from runStart
-    for runIndex = runStart:6
+    for runIndex = runStart:8
         fprintf('Starting run %d for %s...\n', runIndex, subjectBIDS);
         image_dir = fullfile(main_dir, 'stimuli');
         % Load images and create textures
