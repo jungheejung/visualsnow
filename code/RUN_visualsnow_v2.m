@@ -9,7 +9,7 @@ runStart = input('Enter starting run index (1-4): ');
 subjectBIDS = sprintf('sub-%02d', subjectNum); % Format as sub-01, sub-02, etc.
 
 % Confirmation prompt
-confirmationMessage = sprintf('We will start the scan for %s, run %d. /nConfirm (y/n): ', subjectBIDS, runStart);
+confirmationMessage = sprintf('\nWe will start the scan for %s, run %d. \nWould you like to proceed? (y/n): ', subjectBIDS, runStart);
 proceed = input(confirmationMessage, 's');
 
 if ~strcmpi(proceed, 'y')
@@ -31,7 +31,7 @@ try
     sequence = loadCounterbalance(counterbalanceFile, subjectBIDS);
 
     % Loop through runs starting from runStart
-    for runIndex = runStart:4
+    for runIndex = runStart:6
         fprintf('Starting run %d for %s...\n', runIndex, subjectBIDS);
         image_dir = fullfile(main_dir, 'stimuli');
         % Load images and create textures
