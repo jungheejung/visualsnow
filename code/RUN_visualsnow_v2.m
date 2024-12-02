@@ -25,7 +25,7 @@ try
     Screen('Preference', 'SkipSyncTests', 1);
     [win, rect] = Screen('OpenWindow', max(Screen('Screens')), [0 0 0]);
     Screen('TextSize', win, 40);
-
+    HideCursor;
     % Load Counterbalance Scheme
     counterbalanceFile = '../design/counterbalance_sequences.tsv';
     sequence = loadCounterbalance(counterbalanceFile, subjectBIDS);
@@ -47,7 +47,7 @@ try
 
     % Close Psychtoolbox
     Screen('CloseAll');
-
+    ShowCursor;
 catch e
     % Handle errors and close Psychtoolbox
     Screen('CloseAll');
