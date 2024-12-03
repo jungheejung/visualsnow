@@ -29,4 +29,11 @@ If user needs to generate another counterbalancing scheme for longer or shorter 
 1. please navigate to `/code/utils`
 2. make edits in `generate_counterbalance.py`
 3. run `python generate_counterbalance.py`, which creates a `counterbalance_sequences.tsv`. [ link ](https://github.com/jungheejung/visualsnow/blob/main/design/counterbalance_sequences.tsv)
-4. This sequeqnce file `.tsv` is essential for providing the correct instruction image for each run. 
+4. This sequeqnce file `.tsv` is essential for providing the correct instruction image for each run.
+
+## Visuals during anatomical scans
+The whole visual snow protocol can be relatively boring, since the participant is staring at a fixation for 64 minues. We can afford to present some background visuals during the anatomical scans. Participants can rest and close their eyes, or they can watch the video on screen. 
+We use this video provided by the naturalistic imaging lab [https://www.headspacestudios.org/inscapes](https://www.headspacestudios.org/inscapes)
+It is a 7-min video, and you can play on repeat during T1 and T2 scans. 
+
+
