@@ -137,8 +137,8 @@ function runExperiment(win, introTex, fixationTex, waitTex, images)
 Screen('DrawTexture', win, introTex, [], introDstRect);
 Screen('Flip', win);
 
-% Wait for '5%' key press
-waitForKeyPress('5%');
+% Wait for 't' key press
+waitForKeyPress('t');
 
 % Show Fixation Image for 8 minutes
 Screen('DrawTexture', win, fixationTex, [], fixationDstRect);
