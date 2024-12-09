@@ -4,7 +4,7 @@ current_dir = pwd;
 main_dir = fileparts(current_dir);
 
 % Prompt for subject number and starting run index
-subjectNum = input('Enter subject number (e.g., 1 for sub-01): ');
+subjectNum = input('Enter subject number. Provide integer (e.g., for sub-01 input 1): ');
 runStart = input('Enter starting run index (1-8): ');
 subjectBIDS = sprintf('sub-%02d', subjectNum); % Format as sub-01, sub-02, etc.
 
