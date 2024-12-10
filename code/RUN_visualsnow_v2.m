@@ -4,8 +4,8 @@ current_dir = pwd;
 main_dir = fileparts(current_dir);
 
 % Prompt for subject number and starting run index
-subjectNum = input('Enter subject number (e.g., 1 for sub-01): ');
-runStart = input('Enter starting run index (1-4): ');
+subjectNum = input('Enter subject number. Provide integer (e.g., for sub-01 input 1): ');
+runStart = input('Enter starting run index (1-8): ');
 subjectBIDS = sprintf('sub-%02d', subjectNum); % Format as sub-01, sub-02, etc.
 
 % Confirmation prompt
@@ -31,7 +31,7 @@ try
     sequence = loadCounterbalance(counterbalanceFile, subjectBIDS);
 
     % Loop through runs starting from runStart
-    for runIndex = runStart:6
+    for runIndex = runStart:8
         fprintf('Starting run %d for %s...\n', runIndex, subjectBIDS);
         image_dir = fullfile(main_dir, 'stimuli');
         % Load images and create textures
@@ -137,8 +137,8 @@ function runExperiment(win, introTex, fixationTex, waitTex, images)
 Screen('DrawTexture', win, introTex, [], introDstRect);
 Screen('Flip', win);
 
-% Wait for '5%' key press
-waitForKeyPress('5%');
+% Wait for 't' key press
+waitForKeyPress('t');
 
 % Show Fixation Image for 8 minutes
 Screen('DrawTexture', win, fixationTex, [], fixationDstRect);
