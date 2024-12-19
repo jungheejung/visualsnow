@@ -21,10 +21,15 @@ fw sync --include nifti --metadata fw://parvizi/parv2 /Users/heejungj/Documents/
 ```
 INPUT_DIRECTORY=/Users/heejungj/Documents/projects_local/visualsnow_source
 OUTPUT_DIRECTORY=/Users/heejungj/Documents/projects_local/visualsnow_source/derivatives
-LICENSE_DIR=/Users/h/freesurfer_license.txt
-docker run --rm -it \
-  -v {INPUT_DIRECTORY}:/data:ro \
-  -v {OUTPUT_DIRECTORY}:/out \
-  -v {LICENSE_DIR}:/opt/freesurfer/license.txt:ro \
-  nipreps/fmriprep:24.1.1 --verbose --fs-no-reconall --low-mem —mem 8 --ignore fieldmaps /data /out participant --participant-label sub-001
+LICENSE_DIR=/Users/heejungj/freesurfer_license.txt
+
+  docker run --rm -it \
+  --platform linux/amd64 \
+  -v ${INPUT_DIRECTORY}:/data:ro \
+  -v ${OUTPUT_DIRECTORY}:/out \
+  -v ${LICENSE_DIR}:/opt/freesurfer/license.txt:ro \
+  nipreps/fmriprep:24.1.1 --verbose \
+  --fs-no-reconall --low-mem --mem 8 \
+  /data /out participant --participant-label sub-002
+
 ```
