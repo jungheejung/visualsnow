@@ -8,10 +8,12 @@ import shutil
 main_dir = '/Users/heejungj/Documents/projects_local/visualsnow_source/parv2'
 source_dir = '/Users/heejungj/Documents/projects_local/visualsnow_source'
 REPETITION_TIME = 1
+# TODO: Sofia Pantis raised a good point about the DEP files
+# We should add a exclusion rule for the DEP files when globbing data
 
 # Define the specific logic to locate .nii.gz files in a controlled way
 for subject_dir in Path(main_dir).glob('SUBJECTS/*@Parvizi'):  # Loop through subjects
-    for session_dir in subject_dir.glob('SESSIONS/*/ACQUISITIONS/*epi-RS*/FILES'):  # Navigate to FILES directories
+    for session_dir in subject_dir.glob('SESSIONS/*/ACQUISITIONS/*epi-RS*/FILES'):  # Navigate to FILES directories 
         for nii_file in session_dir.glob('*.nii.gz'):  # Only look for .nii.gz files in these directories
             # Extract subject
             sub = subject_dir.name.split('@')[0]
