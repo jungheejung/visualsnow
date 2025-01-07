@@ -2,7 +2,9 @@ import os, json
 from pathlib import Path
 import re
 import shutil
-
+"""
+Bidsify fmap - direct download from flywheel. Renaming files to align with BIDS convention
+"""
 # Base directory
 main_dir = '/Users/heejungj/Documents/projects_local/visualsnow_source/parv2'
 source_dir = '/Users/heejungj/Documents/projects_local/visualsnow_source'
