@@ -3,6 +3,11 @@ from pathlib import Path
 import re
 import shutil 
 
+"""
+Bidsify T1 images
+Direct download from Flywheel -> rename files to align with BIDS convention
+"""
+
 # Base directory
 main_dir = '/Users/heejungj/Documents/projects_local/visualsnow_source/parv2'
 source_dir = '/Users/heejungj/Documents/projects_local/visualsnow_source'
