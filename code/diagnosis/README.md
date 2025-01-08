@@ -33,7 +33,18 @@ fw sync --include nifti \
 /Users/heejungj/Documents/projects_local/visualsnow_source/volunteer
 ```
 
-## 2. Running fmriprep on BIDS validated data
+## 2. BIDS-ify downloaded data
+At this point, the file names are directly downloading from flywheel and have haphazard names with 30 digits. Now, we'll rename the file and structure them in order to keep files BIDS-compliant. 
+
+```
+# If you have a specific subject
+python ./visualsnow/code/diagnosis/bidsify_bold.py --sub {SUB}
+
+# If you want to batch run all the participants. NOTE: subjects are assumed as {SUB}@Parvizi
+python ./visualsnow/code/diagnosis/bidsify_bold.py
+```
+
+## 3. Running fmriprep on BIDS validated data
 - A. install fmriprep-docker
 - B. get Freesurefer license
 - C. run the following line of code
