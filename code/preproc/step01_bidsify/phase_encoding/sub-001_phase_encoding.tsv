@@ -1,0 +1,5 @@
+sub	run	task	bold_PhaseEncodingPolarityGE	bold_PhaseEncodingDirection	fmap_PhaseEncodingPolarityGE	fmap_PhaseEncodingDirection
+sub-001	run-01	task-restclosed	Unflipped	j-	Flipped	j
+sub-001	run-02	task-restclosed	Unflipped	j-	Flipped	j
+sub-001	run-03	task-restopen	Unflipped	j-	Flipped	j
+sub-001	run-04	task-restopen	Unflipped	j-	Flipped	j
