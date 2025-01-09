@@ -1,9 +1,0 @@
-sub	run	task	bold_PhaseEncodingPolarityGE	bold_PhaseEncodingDirection	fmap_PhaseEncodingPolarityGE	fmap_PhaseEncodingDirection
-sub-003	run-01	task-restclosed	Unflipped	j-	Flipped	i-
-sub-003	run-02	task-restopen	Unflipped	i	Flipped	i-
-sub-003	run-03	task-restclosed	Unflipped	i	Flipped	i-
-sub-003	run-04	task-restclosed	Unflipped	i	Flipped	i-
-sub-003	run-05	task-restopen	Unflipped	i	Flipped	i-
-sub-003	run-06	task-restopen	Unflipped	i	Flipped	j
-sub-003	run-07	task-restclosed	Unflipped	i	Flipped	i-
-sub-003	run-08	task-restopen	Unflipped	i	Flipped	i-

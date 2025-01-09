@@ -38,6 +38,8 @@ for SUB in sub-001 sub-002 sub-003; do #sub-001
         mkdir -p "$(dirname ${EPI_TOPUP})"
         mkdir -p "$(dirname ${SYNTH_PEPOLAR})"
         mkdir -p "$(dirname ${EPI10})"
+        # Extract 10 slices from the EPI to capture bi-polar directions in the fieldmap. 
+        # NOTE: the PEpolar maps only include uni-directional phase encoding, which is opposite to the phase encoding direction used in the EPI maps
         fslroi ${EPI} ${EPI10} 20 10
         fslmerge -t ${SYNTH_PEPOLAR} ${PEPOLAR} ${EPI10}
 
