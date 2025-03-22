@@ -58,7 +58,8 @@ for SUB in sub-001 sub-002 sub-003; do #sub-001
         #            --inindex=1 \
         #            --method=jac \
         #            --out=${EPI_TOPUP}
-
+        # index 12 points to the to the EPI direction
+        # I manually created 20 scans with 10 in the topup direction P >> A; 10 in the EPI direction A >> P
         applytopup --imain=${EPI} \
                 --topup=${OUTPUT_TOPUP} \
                 --datain=${ACQPARAMS} \
