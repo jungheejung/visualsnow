@@ -27,11 +27,6 @@ fw sync --include nifti \
 /Users/h/Documents/projects_local/visualsnow_source
 ```
 
-```
-fw sync --include nifti \
---metadata fw://parvizi/parv2/VOL \
-/Users/heejungj/Documents/projects_local/visualsnow_source/volunteer
-```
 
 ## 2. BIDS-ify downloaded data
 At this point, the file names are directly downloading from flywheel and have haphazard names with 30 digits. Now, we'll rename the file and structure them in order to keep files BIDS-compliant. 
