@@ -1,8 +1,13 @@
-1. run `extract_acqparameters.ipynb`
+1. run `step01_extract_acqparameters.ipynb`
 - Because there were two participants that had mismatching phas encoding directions, we manually extract the phase encoding directions and apply the parameters from a corresponding fmap. Note, the corresponding `fmap` may not always be collected adjacent to the `func` file, therefore resulting in poor-er image quality after distortion correction.
 
+2. run realignment and discard 6 DISDAQs `step02_realignment.sh`
+- We'll remove 6 volumes in the beginning
+- Then, we extract a reference volume (first volume of the DISDAQ discard image)
+- From this, we realign all the functional images in a given run
 
-2. create fieldmap `topup_per_run.sh`
+
+3. create fieldmap `code/preproc/step02_fmap/step03_topup_per_run_sub02ses02.sh.sh`
    
    ```
    topup --imain=${SYNTH_PEPOLAR} \
@@ -13,7 +18,7 @@
               --iout=${VISUALSNOW_DIR}/TST/${SUB}/unwarped_images_task-${TASK}_run-${RUN_NUM}.nii.gz```
 
 
-3. apply distortion correction`topup_per_run.sh`
+3. apply distortion correction`code/preproc/step02_fmap/step03_topup_per_run_sub02ses02.sh.sh`
    
       ```
       applytopup --imain=${EPI} \
