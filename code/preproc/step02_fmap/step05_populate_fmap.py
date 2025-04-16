@@ -2,9 +2,9 @@ import os
 import json
 import re
 
-def find_files(bids_dir, subject, subfolder, file_extension):
+def find_files(bids_dir, subject, session, subfolder, file_extension):
     """Find files in a specific BIDS subfolder for a subject."""
-    folder_path = os.path.join(bids_dir, subject, subfolder)
+    folder_path = os.path.join(bids_dir, subject, session, subfolder)
     matches = []
     if os.path.exists(folder_path):
         for root, _, files in os.walk(folder_path):
@@ -30,12 +30,16 @@ def update_intendedfor(fmap_jsons, func_files):
         # Match functional files to this fmap
         matched_func_files = match_fmap_to_func(fmap_json, func_files)
         
-        # BIDS-valid paths for IntendedFor (relative paths prefixed with ./)
+        # # BIDS-valid paths for IntendedFor (relative paths prefixed with ./)
+        # relative_func_paths = [
+        #     os.path.join("./func", os.path.basename(func_file))
+        #     for func_file in matched_func_files
+        # ]
+        # Get relative paths from BIDS root
         relative_func_paths = [
-            os.path.join("./func", os.path.basename(func_file))
+            os.path.relpath(func_file, os.path.dirname(fmap_json))
             for func_file in matched_func_files
         ]
-        
         if relative_func_paths:
             # Update the JSON file
             with open(fmap_json, 'r') as f:
@@ -53,10 +57,11 @@ def update_intendedfor(fmap_jsons, func_files):
 def main():
     bids_dir = input("Enter the path to your BIDS dataset: ").strip()
     subject = input("Enter the subject ID (e.g., sub-002): ").strip()
+    session = input("Enter session (e.g. ses-02): ").strip()
 
     # Step 1: Find fmap JSON files and func NIfTI files
-    fmap_jsons = sorted(find_files(bids_dir, subject, "fmap", ".json"))
-    func_files = sorted(find_files(bids_dir, subject, "func", ".nii.gz"))
+    fmap_jsons = sorted(find_files(bids_dir, subject, session, "fmap", ".json"))
+    func_files = sorted(find_files(bids_dir, subject, session,  "func", ".nii.gz"))
 
     print(f"Found {len(fmap_jsons)} fieldmap JSON files in {subject}.")
     print(f"Found {len(func_files)} functional NIfTI files in {subject}.")
