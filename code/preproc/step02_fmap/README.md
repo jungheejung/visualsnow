@@ -33,5 +33,5 @@
 - We visualize source image and distortion-corrected image to see if the correction helpes improve image quality
 
 
-5. Add intendedFor field using `populate_fmap.py`
+5. Add intendedFor field using `step05_populate_fmap.py`
 - For later fMRIprep preprocessing, we populate the intended for fields with the corresponding `func` filenames in the `fmap` .json file 
